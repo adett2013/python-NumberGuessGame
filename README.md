@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.6%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python Version">
   <img src="https://img.shields.io/badge/License-AGPL%20v3-green?style=for-the-badge" alt="License">
-  <img src="https://img.shields.io/badge/Difficulty-Beginner%20Friendly-brightgreen?style=for-the-badge" alt="Difficulty">
+  <img src="https://img.shields.io/badge/Range-1--5-orange?style=for-the-badge" alt="Number Range">
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
 </p>
 
@@ -15,7 +15,7 @@
 
 ## 📖 About
 
-Howdy! This is a **Number Guessing Game** created as a beginner Python project. The computer picks a secret random number and you try to guess it — getting *higher* or *lower* hints along the way until you nail it! 🎉
+Howdy! This is a **Number Guessing Game** created as a beginner Python project. The computer randomly picks a number between **1 and 5** and you get one shot to guess it. Guess right and you win — guess wrong and a new number is picked for another round! 🎉
 
 ---
 
@@ -23,11 +23,10 @@ Howdy! This is a **Number Guessing Game** created as a beginner Python project. 
 
 | Feature | Description |
 |---|---|
-| 🎲 Random Number Generation | A new secret number is picked every game |
-| 💬 Interactive Hints | Get "Too high!" or "Too low!" feedback after every guess |
-| 🔄 Replay Support | Play as many rounds as you like |
-| 🏆 Attempt Counter | See how many guesses it took you to win |
-| 🛡️ Input Validation | Handles non-numeric input gracefully |
+| 🎲 Random Number Generation | A new secret number (1–5) is picked every round |
+| ⚡ Single-Guess Rounds | One guess per round — beat the odds! |
+| 🔄 Replay Support | Type `y` or `yes` after winning to play again |
+| 🕵️ Number Reveal | If you miss, the correct number is shown so you always learn |
 
 ---
 
@@ -35,7 +34,7 @@ Howdy! This is a **Number Guessing Game** created as a beginner Python project. 
 
 ### Prerequisites
 
-- Python **3.x** installed on your machine. Download it from [python.org](https://www.python.org/downloads/).
+- Python **3.6+** installed on your machine. Download it from [python.org](https://www.python.org/downloads/).
 
 ### Installation
 
@@ -50,7 +49,7 @@ cd python-NumberGuessGame
 ### Running the Game
 
 ```bash
-python number_guess.py
+python main.py
 ```
 
 ---
@@ -58,34 +57,40 @@ python number_guess.py
 ## 🎮 How to Play
 
 1. **Run** the script using the command above.
-2. The program will **pick a random secret number** within a set range (e.g. 1–100).
-3. **Enter your guess** when prompted.
-4. You'll receive one of three hints:
-   - 📈 `Too high!` — your guess is above the secret number
-   - 📉 `Too low!` — your guess is below the secret number
-   - 🎉 `Correct!` — you guessed it!
-5. Keep guessing until you find the secret number.
-6. Your **total number of attempts** will be displayed when you win.
+2. The program picks a **random number between 1 and 5**.
+3. **Type your guess** (a number from 1 to 5) and press Enter.
+4. Two outcomes are possible:
+   - 🎉 **Correct!** — The number is revealed and you're asked if you want to play again.
+   - ❌ **Wrong!** — The correct number is revealed, and a fresh round starts automatically.
+5. After a correct guess, type `y` or `yes` to play again, or anything else to quit.
 
 ---
 
 ## 📸 Example Gameplay
 
+**Winning round:**
 ```
-Welcome to the Number Guessing Game! 🎯
-I'm thinking of a number between 1 and 100...
+Welcome to the number guessing game! You have to guess the random number between 1-5. Lets go!
+Type your guess! 3
+You've guessed the correct number! Number: 3
+Type y to play again. Type n to quit. y
+Type your guess! 
+```
 
-Enter your guess: 50
-📉 Too low! Try again.
+**Losing round:**
+```
+Welcome to the number guessing game! You have to guess the random number between 1-5. Lets go!
+Type your guess! 2
+The random number was 4
+Try again. Note: The number has changed after your guess.
+Type your guess! 
+```
 
-Enter your guess: 75
-📈 Too high! Try again.
-
-Enter your guess: 62
-📉 Too low! Try again.
-
-Enter your guess: 68
-🎉 Correct! You guessed it in 4 attempts. Well done!
+**Quitting:**
+```
+Type y to play again. Type n to quit. n
+Thanks for playing my game. This means a lot to me!
+Find more games on https://www.arne-dettmer.de
 ```
 
 ---
@@ -109,4 +114,5 @@ This project is licensed under the **GNU Affero General Public License v3.0**. S
 ---
 
 <p align="center">Made with ❤️ and Python · Happy Guessing! 🎯</p>
+<p align="center">Find more games on <a href="https://www.arne-dettmer.de">arne-dettmer.de</a></p>
 
